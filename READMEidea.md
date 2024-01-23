@@ -1,8 +1,8 @@
 ### Ideas
 
-1. Book Open
-2. Hero section-background video
-3. Image carousel
+1. Hero section-background video on book's front cover
+2. Book Open (with one side is nav and other side is detailed explaination)
+3. Image carousel (is on the other side)
 4. Donation for Animals
 5. Live videos for education - interactive educational sessions, ask questions
 6. Feedback Form, custom contact forms for users, reviews and ratings

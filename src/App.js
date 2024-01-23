@@ -4,8 +4,8 @@ import Carousel from "./components/Carousel";
 function App() {
   return (
     <div className="App">
-      <Hero />
       <Books />
+      <Hero />
       <Carousel />
     </div>
   );

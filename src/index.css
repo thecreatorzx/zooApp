@@ -11,3 +11,78 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.book-box{
+  perspective: 1200px;
+  perspective-origin: top;
+  transition: perspective 1s ease;
+  overflow: hidden;
+  background: grey;
+  /* transform: translate(-150px) scale(1.25); */
+}
+.book-box:hover{
+  transform: none;
+  transition: transform .5s ease;
+}
+.book{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(41, 11, 41, 0.617);
+  perspective: 1500px;
+  transform: translateY(-40px) rotateX(30deg);
+}
+.coverLeft1,.coverLeft2,.coverRight1,.coverRight2{
+  position: absolute;
+  left: 300px;
+  width: 42vw;
+  max-width: 350px;
+  height: 60vh;
+  transition: transform 4.8s ease;
+  transform-origin:-20px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  perspective-origin: -100% 100%;
+  background: red;
+  backface-visibility: hidden;
+  /* box-shadow: inset 0px -2px 0 0 black; */
+}
+.coverLeft1,.coverLeft2{
+  /* display: none; */
+}
+.coverLeft1,.coverRight1{
+  z-index: 2;
+}
+.coverLeft1, .coverRight2{
+  background: grey;
+}
+.coverLeft2,.coverRight2{
+  backface-visibility: visible;
+}
+.coverLeft1::before,.coverRight2::before{
+  position: absolute;
+  content: '';
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: black;
+  transform-origin: right;
+  transform: rotateY(-120deg);
+}
+.coverLeft1::after.coverRight2::after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  width: 100%;
+  height:2px;
+  background: black;
+  transform-origin: bottom;
+  transform: rotateX(180deg)
+}
+.coverLeft1:hover,.coverRight1:hover{
+  transform: rotateY(-180deg);
+}
+.coverLeft1:hover~.coverLeft2,.coverRight1:hover~.coverRight2{
+  transform: rotateY(-180deg);
+}
