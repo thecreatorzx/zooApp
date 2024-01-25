@@ -12,8 +12,8 @@ code {
     monospace;
 }
 .book-box{
-  perspective: 1200px;
-  perspective-origin: top;
+  perspective: 2200px;
+  perspective-origin: bottom;
   transition: perspective 1s ease;
   overflow: hidden;
   background: grey;
@@ -33,56 +33,86 @@ code {
   perspective: 1500px;
   transform: translateY(-40px) rotateX(30deg);
 }
-.coverLeft1,.coverLeft2,.coverRight1,.coverRight2{
+.coverLeft1,.coverLeft2,.coverRight1,.coverRight2,
+.page1Left,.page1Right,.page2Left,.page2Right,.page3Left,.page3Right{
   position: absolute;
   left: 300px;
   width: 42vw;
   max-width: 350px;
   height: 60vh;
   transition: transform 4.8s ease;
-  transform-origin:-20px;
+  transform-origin:left bottom;
   transform-style: preserve-3d;
   perspective: 500px;
-  perspective-origin: -100% 100%;
-  background: red;
+  perspective-origin: bottom;
+  background: white;
   backface-visibility: hidden;
   /* box-shadow: inset 0px -2px 0 0 black; */
 }
-.coverLeft1,.coverLeft2{
-  /* display: none; */
+.coverLeft1{
+  background: slateblue;
+  z-index: 10;
+  /* transform: rotateY(-180deg); */
 }
-.coverLeft1,.coverRight1{
+.coverLeft2{
+  background:grey;
+  backface-visibility: visible;
+  z-index: 9;
+  /* transform: rotateY(-180deg); */
+}
+.coverRight1{
+  background: grey;
   z-index: 2;
 }
-.coverLeft1, .coverRight2{
-  background: grey;
-}
-.coverLeft2,.coverRight2{
+.coverRight2{
+  background-color: slateblue;
   backface-visibility: visible;
+  z-index: 1;
 }
-.coverLeft1::before,.coverRight2::before{
-  position: absolute;
-  content: '';
-  right: 0;
-  width: 2px;
-  height: 100%;
-  background: black;
-  transform-origin: right;
-  transform: rotateY(-120deg);
+.page1Left{
+  z-index: 8;
+  /* transform: rotateY(-180deg); */
 }
-.coverLeft1::after.coverRight2::after{
+.page1Right{
+  z-index: 7;
+  backface-visibility: visible;
+  /* transform: rotateY(-180deg); */
+}
+.page2Left{
+  z-index: 6;
+  /* transform: rotateY(-180deg); */
+}
+.page2Right{
+  z-index: 5;
+  backface-visibility: visible;
+  /* transform: rotateY(-180deg); */
+}
+.page3Left{
+  z-index: 4;
+  /* transform: rotateY(-180deg); */
+}
+.page3Right{
+  z-index: 3;
+  backface-visibility: visible;
+  /* transform: rotateY(-180deg); */
+}
+.endSide {
   position: absolute;
-  content: '';
+  left: -22px;
+  width: 8%;
+  height: 106%;
+  background: rgba(41, 11, 41, 0.617);
+  border-radius: 150px 0px 0 150px;
+}
+.endBottom{
+  position: absolute;
   bottom: 0;
-  width: 100%;
-  height:2px;
-  background: black;
-  transform-origin: bottom;
-  transform: rotateX(180deg)
+  transform: translate(-6.5%,100%);
+  width: 106%;
+  height: 6%;
+  background-color: white;
+  z-index: 3;
+  border-radius: 100px 0 0 100px;
+  clip-path: polygon(0% 0%,100% 0%,94% 100%,0% 100%);
 }
-.coverLeft1:hover,.coverRight1:hover{
-  transform: rotateY(-180deg);
-}
-.coverLeft1:hover~.coverLeft2,.coverRight1:hover~.coverRight2{
-  transform: rotateY(-180deg);
-}
+
