@@ -1,12 +1,12 @@
 import React from "react";
+import Hero from "./Hero";
 
 const Books = () => {
   return (
     <div className="book-box">
       <div className="book">
         <div className="coverLeft1">
-          {/* Here is the code that must be present for the cover of the page 
-          id start login etc. */}
+          <Hero />
         </div>
         <div className="coverLeft2"></div>
         <div className="page1Left"></div>
