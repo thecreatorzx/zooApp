@@ -4,7 +4,10 @@ const Books = () => {
   return (
     <div className="book-box">
       <div className="book">
-        <div className="coverLeft1">Hello my name is mohd saad</div>
+        <div className="coverLeft1">
+          {/* Here is the code that must be present for the cover of the page 
+          id start login etc. */}
+        </div>
         <div className="coverLeft2"></div>
         <div className="page1Left"></div>
         <div className="page1Right"></div>
